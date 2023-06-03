@@ -9,7 +9,8 @@ import UserAddStep2 from "./UserAddStep2";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { add } from "./usersSlice";
-import { redirect, useNavigate } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const steps = ["Add Namd & Email", "Choose Password"];
 
@@ -49,6 +50,7 @@ export default function UserAdd() {
 
   return (
     <Box sx={{ width: "100%" }}>
+      <NavLink to={`/users`}>Users List</NavLink>
       <Stepper activeStep={activeStep}>
         {steps.map((label, index) => {
           return (
