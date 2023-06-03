@@ -4,7 +4,7 @@ import Button from "@mui/material/Button";
 import { useState } from "react";
 
 export default function UserAddStep1({ userInitial, onSubmit }) {
-  const [name, setName] = useState(userInitial.name);
+  const [username, setUsername] = useState(userInitial.username);
   const [email, setEmail] = useState(userInitial.email);
 
   return (
@@ -13,8 +13,8 @@ export default function UserAddStep1({ userInitial, onSubmit }) {
         id="outlined-basic"
         label="Name"
         variant="outlined"
-        value={name}
-        onChange={(e) => setName(e.target.value) }
+        value={username}
+        onChange={(e) => setUsername(e.target.value) }
       />
       <br />
       <TextField
@@ -27,7 +27,7 @@ export default function UserAddStep1({ userInitial, onSubmit }) {
       <br />
       <Button
         onClick={(e) => {
-          onSubmit({name, email});
+          onSubmit({username, email});
         }}
         variant="contained"
       >

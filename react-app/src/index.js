@@ -5,7 +5,6 @@ import { Provider } from "react-redux";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import UserList from "./Users/UserList";
-import users from "./Users/userData";
 import UserAdd from "./Users/UserAdd";
 import App from "./App";
 import store from "./store";
@@ -22,7 +21,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/users",
-    element: <UserList users={users} />,
+    element: <UserList />,
   },
   {
     path: "/add-user",

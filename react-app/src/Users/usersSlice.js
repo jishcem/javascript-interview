@@ -6,9 +6,15 @@ const initialState = {users};
 export const usersSlice = createSlice({
     name: 'users',
     initialState,
-    reducers: {}
+    reducers: {
+        add: (state, action) => {
+            state.users.push({...action.payload, id: state.users.length + 1 });
+        },
+    }
 });
 
-export const selectUsers = (state) => state.users;
+export const { add } = usersSlice.actions;
+
+export const selectUsers = (state) => state.users.users;
 
 export default usersSlice.reducer;
