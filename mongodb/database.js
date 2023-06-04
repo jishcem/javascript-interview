@@ -8,22 +8,22 @@ class Database {
         this._usersCollection = undefined;        
     }
 
-    get client() {
+    get client() { // Getter for client
         return this._client;
     }
 
-    get usersCollection() {
+    get usersCollection() { // Getter for collection
         return this._usersCollection;
     }
 
-    async build() {
+    async build() { // Building the instance & connecting it.
         this.createInstance();
         try {
             await this.connect();
         this.initializeDatabase();
         console.log('Done mongodb initializing');
         } catch (error) {
-            console.error(error)
+            throw new Error(error)
         }
     }
 
