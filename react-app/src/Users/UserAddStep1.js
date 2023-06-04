@@ -3,7 +3,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { useState } from "react";
 
-export default function UserAddStep1({ userInitial, onSubmit }) {
+export default function UserAddStep1({ userInitial, onSubmit }) { // For initial value - if the user comes to the first page from second page it has to preserve the values. 
   const [username, setUsername] = useState(userInitial.username);
   const [email, setEmail] = useState(userInitial.email);
 

@@ -9,29 +9,29 @@ import UserAddStep2 from "./UserAddStep2";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { add } from "./usersSlice";
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const steps = ["Add Namd & Email", "Choose Password"];
 
 export default function UserAdd() {
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [activeStep, setActiveStep] = useState(0);
 
-  const [user, setUser] = useState({ username: "", email: "", password: "" });
+  const [user, setUser] = useState({ username: "", email: "", password: "" }); // Initializing the user data with empty string values. 
   const submitStep1 = (e) => {
-    setUser({...user, ...e});
+    setUser({ ...user, ...e });
     setActiveStep(activeStep + 1);
   };
 
   const submitStep2 = (e) => {
     console.log(e);
-    console.log({...user, password: e});
-    setUser({...user, password: e});
-    dispatch(add(user));
-    navigate("/users");
-  }
+    console.log({ ...user, password: e });
+    setUser({ ...user, password: e });
+    dispatch(add(user)); // Dispatch action to the store
+    navigate("/users"); // Redirect to the listing page.
+  };
 
   const handleBack = () => {
     setActiveStep(activeStep - 1);
