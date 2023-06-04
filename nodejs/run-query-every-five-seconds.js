@@ -1,6 +1,6 @@
 const timer = setInterval(() => {
     console.log("QUERY RUNNING");
-}, 5000);
+}, 5000); // Run every five seconds
 
 process.on('exit', () => {
     handleExit();
@@ -11,5 +11,5 @@ process.on('SIGINT', () => {
 })
 
 function handleExit() {
-    clearInterval(timer)
+    clearInterval(timer) // Clears the timer
 }
